@@ -15,7 +15,7 @@ function App() {
   // finally, you'll need an array of slogans, which could start out as ['The City of Excellence'] for example
   const [cityName, setCityName] = useState('___');
   const [slogans, setSlogans] = useState(['we have people here', 'definitely not full of robots']);
-
+  const [cityImage, setCityImage] = useState('1', '1', '1');
 
   function handleCityName(e){
     setCityName(e.target.value);

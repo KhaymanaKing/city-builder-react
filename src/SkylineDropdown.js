@@ -8,9 +8,9 @@ export default function SkylineDropdown(props) {
       {/* on change, this component should use e.target.value to pass the correct id to the setSkyline function */}
       {/* note that the options will need value properties (1, 2, or 3) that correspond to the photo filenames in the public directory */}
       <select>
-        <option>Pink</option>
-        <option>Busy</option>
-        <option>Foggy</option>
+        <option value='1'>Pink</option>
+        <option value='2'>Busy</option>
+        <option value='3'>Foggy</option>
       </select>
     </div>
   );
