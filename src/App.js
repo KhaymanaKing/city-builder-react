@@ -15,8 +15,11 @@ function App() {
   // finally, you'll need an array of slogans, which could start out as ['The City of Excellence'] for example
   const [cityName, setCityName] = useState('___');
   const [slogans, setSlogans] = useState(['we have people here', 'definitely not full of robots']);
-  const [cityImage, setCityImage] = useState('1', '1', '1');
-
+  const [sloganForm, setSloganForm] = useState('');
+  // const [cityImage, setCityImage] = useState('1', '1', '1');
+  const [skylineId, setskylineId] = useState ('1');
+  const [waterfrontId, setwaterfrontId] = useState ('1');
+  const [castleId, setcastleId] = useState ('1');
   function handleCityName(e){
     setCityName(e.target.value);
   }
@@ -25,6 +28,7 @@ function App() {
 
   return (
     <div className="App">
+      <City waterfrontId={waterfrontId} skylineId={skylineId} castleId={castleId}/>
       {/* here, the City component takes in skylineId, waterfrontId, castleId as props. It'll use those ids to render pictures correctly. */}
       <h1>
         {/* dynamically update the city name here using state */}
@@ -35,6 +39,10 @@ function App() {
         {/* here, the CityNameInput component takes in the setCityName state handler function */}
         <CityNameInput handleCityName={handleCityName}/>
         <section className='dropdowns'>
+          <SkylineDropdown setskylineId={setskylineId}/>          
+          <CastleDropdown setcastleId={setcastleId}/>
+          <WaterfrontDropdown setwaterfrontId={setwaterfrontId}/>
+          
           {/* 
           render all three Dropdown components (WaterfrontDropdown, SkylineDropdown, CastleDropdown) here. 
           
@@ -42,7 +50,7 @@ function App() {
           */}
         </section>
         {/* here, the SloganForm component takes in the setSlogans state handler function and the slogans array that live in state */}
-        <SloganForm setSlogans={setSlogans} slogans={slogans}/>
+        <SloganForm sloganForm={sloganForm} setSlogansForm={setSloganForm} setSlogans={setSlogans} slogans={slogans}/>
         {/* here, the SloganList component takes the array of slogans that lives in state */}
         <SloganList slogans={slogans}/> 
       </div>
