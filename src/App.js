@@ -23,7 +23,9 @@ function App() {
   function handleCityName(e){
     setCityName(e.target.value);
   }
-
+  function handleSloganForm(slogan){
+    setSloganForm(slogan);
+  }
 
 
   return (
@@ -50,7 +52,7 @@ function App() {
           */}
         </section>
         {/* here, the SloganForm component takes in the setSlogans state handler function and the slogans array that live in state */}
-        <SloganForm sloganForm={sloganForm} setSlogansForm={setSloganForm} setSlogans={setSlogans} slogans={slogans}/>
+        <SloganForm sloganForm={sloganForm} handleSloganForm={handleSloganForm} setSlogans={setSlogans} slogans={slogans}/>
         {/* here, the SloganList component takes the array of slogans that lives in state */}
         <SloganList slogans={slogans}/> 
       </div>
